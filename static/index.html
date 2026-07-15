@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BDR Ping Pong Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ball" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <h1>🏓 BDR Ping Pong Leaderboard</h1>
+    <p class="subtitle">Bragging rights, tracked.</p>
+  </header>
+
+  <main>
+    <section class="card leaderboard-card">
+      <div class="card-head">
+        <h2>Leaderboard</h2>
+        <div class="sort-toggle">
+          <button class="toggle-btn active" data-sort="wins">By Wins</button>
+          <button class="toggle-btn" data-sort="elo">By ELO</button>
+        </div>
+      </div>
+      <div id="leaderboard" class="leaderboard-table"></div>
+    </section>
+
+    <section class="card">
+      <h2>Log a Match</h2>
+      <form id="match-form" class="match-form">
+        <div class="form-row">
+          <label for="winner">Winner 🏆</label>
+          <select id="winner" required></select>
+        </div>
+        <div class="form-row">
+          <label for="loser">Loser 💀</label>
+          <select id="loser" required></select>
+        </div>
+        <div class="form-row">
+          <label for="comment">Trash talk (optional)</label>
+          <input id="comment" type="text" maxlength="280" placeholder="e.g. 'Never should've challenged me.'" />
+        </div>
+        <button type="submit" class="submit-btn">Log Match</button>
+        <p id="form-error" class="form-error"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Head-to-Head</h2>
+      <div class="h2h-picker">
+        <select id="h2h-a"></select>
+        <span class="vs">vs</span>
+        <select id="h2h-b"></select>
+        <button id="h2h-btn" class="submit-btn small">Compare</button>
+      </div>
+      <div id="h2h-result" class="h2h-result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Match History</h2>
+      <div id="history" class="history-feed"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kate · David · Megan · Reeve · Jack · Chris · Audrey · Gina</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

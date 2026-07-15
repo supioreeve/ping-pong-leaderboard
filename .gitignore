@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+*.pyc
+bdr_pingpong.db
+.DS_Store
